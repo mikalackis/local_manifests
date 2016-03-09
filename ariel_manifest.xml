@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="opengapps" fetch="https://github.com/opengapps/"  />
+  <remote name="github" fetch="https://github.com/" />
+
+  <project path="vendor/google/build" name="mikalackis/aosp_build" revision="ariel_dev" remote="github" />
+  <project path="vendor/opengapps/sources/all" name="all" clone-depth="1" revision="master" remote="opengapps" />
+  <!-- If you need other/additional targets, follow the same template: -->
+  <project path="vendor/opengapps/sources/arm" name="arm" clone-depth="1" revision="master" remote="opengapps" />
+
+  <!-- device tree -->
+  <!--<remove-project name="device/lge/hammerhead" path="device/lge/hammerhead"/>
+  <project name="mikalackis/android_device_lge_hammerhead" path="device/lge/hammerhead" remote="github" revision="ariel_dev" />-->
+
+  <!-- framework -->
+  <!--<remove-project name="platform/frameworks/base" path="frameworks/base"/>
+  <project name="mikalackis/platform_frameworks_base" path="frameworks/base" remote="github" revision="ariel_dev" />-->
+
+  <project name="mikalackis/android_packages_apps_AntiTheft" path="packages/apps/AntiTheft" remote="github" revision="master" />
+  <project name="CyanogenMod/android_external_gson" path="external/gson" remote="github" revision="cm-13.0" />
+  <project name="CyanogenMod/external_android_support-prebuilt" path="external/android/support-prebuilt" remote="github" revision="master" />
+
+  <!-- Eleven music player -->
+  <project name="CyanogenMod/android_packages_apps_Eleven" path="packages/apps/Eleven" remote="github" revision="cm-13.0" />
+
+  <!-- CMFileManager -->
+  <project name="mikalackis/android_packages_apps_CMFileManager" path="packages/apps/CMFileManager" remote="github" revision="ariel_dev" />
+  <project name="CyanogenMod/android_external_libtruezip" path="external/libtruezip" remote="github" revision="cm-13.0" />
+  <project name="CyanogenMod/android_external_cyanogen_UICommon" path="external/uicommon" remote="github" revision="cm-13.0" />
+
+  <!-- Ariel vendor files -->
+  <project path="vendor/ariel" name="mikalackis/platform_vendor_ariel" revision="master" remote="github" />
+
+</manifest>
