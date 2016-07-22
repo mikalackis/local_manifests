@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+
+  <!-- based on android-6.0.1_r50 for removed AOSP packages -->
+
   <remote name="opengapps" fetch="https://github.com/opengapps/"  />
   <remote name="github" fetch="https://github.com/" />
 
@@ -8,15 +11,24 @@
   <!-- If you need other/additional targets, follow the same template: -->
   <project path="vendor/opengapps/sources/arm" name="arm" clone-depth="1" revision="master" remote="opengapps" />
 
+
+  <!-- Use custom platform build -->
+  <remove-project name="platform/build" />
+  <project path="build" name="mikalackis/platform_build" groups="pdk" revision="ariel_dev" remote="github">
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+
   <!-- device tree -->
-  <!--<remove-project name="device/lge/hammerhead" path="device/lge/hammerhead"/>
-  <project name="mikalackis/android_device_lge_hammerhead" path="device/lge/hammerhead" remote="github" revision="ariel_dev" />-->
+  <remove-project name="device/lge/hammerhead"/>
+  <project name="mikalackis/android_device_lge_hammerhead" path="device/lge/hammerhead" remote="github" revision="ariel_dev" />
 
-  <!-- framework -->
-  <!--<remove-project name="platform/frameworks/base" path="frameworks/base"/>
-  <project name="mikalackis/platform_frameworks_base" path="frameworks/base" remote="github" revision="ariel_dev" />-->
+  <!-- firewall -->
 
-  <project name="mikalackis/android_packages_apps_AntiTheft" path="packages/apps/AntiTheft" remote="github" revision="master" />
+  <!-- framework
+  <remove-project name="platform/frameworks/base"/>
+  <project name="mikalackis/platform_frameworks_base" path="frameworks/base" remote="github" revision="ariel_dev" /> -->
+
+  <project name="mikalackis/android_packages_apps_ArielGuardian" path="packages/apps/ArielGuardian" remote="github" revision="master" />
   <project name="CyanogenMod/android_external_gson" path="external/gson" remote="github" revision="cm-13.0" />
   <project name="CyanogenMod/external_android_support-prebuilt" path="external/android/support-prebuilt" remote="github" revision="master" />
 
